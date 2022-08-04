@@ -19,7 +19,6 @@ import { VehicleContext } from "../../../../context/vehicleDataContext";
 
 const SideNav = () => {
   const { vehicleData, setVehicleDataHandle } = useContext(VehicleContext);
-
   //states
   const [searchVechicle, setSearchVechicle] = useState(true);
   const [localVehicle, setLocalVehicle] = useState([]);
@@ -71,7 +70,7 @@ const SideNav = () => {
         <Autocomplete
           disablePortal
           id="combo-box-demo"
-          options={vehicleData}
+          options={vehicleData.vehicles}
           getOptionLabel={(option) => option.title}
           sx={buttonStyle.inputBox}
           renderInput={(params) => <TextField {...params} label="Search" />}

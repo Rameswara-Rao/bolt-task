@@ -9,10 +9,12 @@ const App = () => {
   const [vehicleData, setVehicleData] = useState([]);
   const [vehicleDataHandle, setVehicleDataHandle] = useState();
 
-  const vehicleDeatails = async () => {
+  const vehicleDetails = async () => {
     await axios
-      .get("http://localhost:8000/vehicles")
+      .get("https://rameswara-rao.github.io/db/db.json")
       .then((res) => {
+        console.log(res);
+
         setVehicleData(res.data);
       })
       .catch((err) => {
@@ -21,7 +23,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    vehicleDeatails();
+    vehicleDetails();
   }, []);
 
   const dataState = {
